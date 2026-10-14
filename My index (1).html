@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega AI Tools Directory</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #0f172a; color: #f8fafc; padding: 20px; }
+    header { text-align: center; margin-bottom: 30px; }
+    header h1 { font-size: 2.2rem; color: #38bdf8; margin-bottom: 10px; }
+    #search { width: 100%; max-width: 500px; padding: 12px 20px; border-radius: 25px; border: none; outline: none; font-size: 1rem; margin-bottom: 25px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { color: #f43f5e; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: #94a3b8; margin-bottom: 15px; }
+    .card a { display: inline-block; background: #2563eb; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mega AI Tools Directory</h1>
+    <p style="color: #94a3b8; margin-bottom: 15px;">Explore hundreds of best AI tools in one place</p>
+    <input type="text" id="search" placeholder="Search AI Tools..." onkeyup="filterTools()">
+  </header>
+
+  <div class="grid" id="toolsList"></div>
+
+  <script>
+    // यहाँ आप जितने चाहें उतने टूल्स बढ़ा सकते हैं (List of AI Tools)
+    const aiTools = [
+      { name: "ChatGPT", desc: "Best for content writing, coding assistance, and general queries.", link: "https://chat.openai.com" },
+      { name: "Canva Magic Studio", desc: "Create graphic designs, presentations, and AI-generated visuals.", link: "https://canva.com" },
+      { name: "Photoroom", desc: "Remove backgrounds and edit product photos professionally with AI.", link: "https://www.photoroom.com" },
+      { name: "Midjourney", desc: "Generate hyper-realistic and artistic images from text prompts.", link: "https://www.midjourney.com" },
+      { name: "ElevenLabs", desc: "Generate ultra-realistic AI voiceovers and text-to-speech.", link: "https://elevenlabs.io" },
+      { name: "Claude AI", desc: "Advanced AI assistant for summarizing long documents and coding.", link: "https://claude.ai" },
+      { name: "Notion AI", desc: "Write, plan, and organize your notes with built-in AI assistance.", link: "https://www.notion.so" },
+      { name: "Runway Gen-2", desc: "Transform text and images into cinematic AI video clips.", link: "https://runwayml.com" },
+      { name: "Copy.ai", desc: "Automate your marketing copy, emails, and social media posts.", link: "https://www.copy.ai" },
+      { name: "Leonardo AI", desc: "Generate stunning game assets, textures, and creative art.", link: "https://leonardo.ai" },
+      { name: "Perplexity AI", desc: "AI-powered conversational search engine with source citations.", link: "https://www.perplexity.ai" },
+      { name: "CapCut Online", desc: "Easy video editing tool powered by smart AI features.", link: "https://www.capcut.com" }
+      // इसी तरह आप कॉमा लगातर 100 या 200 टूल्स यहाँ जोड़ सकते हैं:
+      // { name: "Tool Name", desc: "Description here", link: "URL here" }
+    ];
+
+    function displayTools(tools) {
+      const container = document.getElementById('toolsList');
+      container.innerHTML = "";
+      tools.forEach(tool => {
+        container.innerHTML += `
+          <div class="card">
+            <h3>${tool.name}</h3>
+            <p>${tool.desc}</p>
+            <a href="${tool.link}" target="_blank">Visit Tool</a>
+          </div>
+        `;
+      });
+    }
+
+    function filterTools() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const filtered = aiTools.filter(tool => 
+        tool.name.toLowerCase().includes(input) || tool.desc.toLowerCase().includes(input)
+      );
+      displayTools(filtered);
+    }
+
+    // पहली बार लोड होने पर सभी टूल्स दिखाएं
+    displayTools(aiTools);
+  </script>
+
+</body>
+</html>
+<print > this Website create a kris raj 
